@@ -1,32 +1,34 @@
 export function getAppointmentsForDay(state, day) {
-  //... returns an array of appointments for that day
+  const dayFound = state.days.find(stateday => day === stateday.name);
+  if(!dayFound){
+    return [];
+  }
   
-  const selectedDay = state.days.find(el => el.name === day);
-  if (!selectedDay) {
-    return [];
+  const appointmentsFound= dayFound.appointments.map(appointment => {
+    return state.appointments[appointment];
+  });
+  return appointmentsFound;
   }
-  const AppointmentsID = selectedDay.appointments;
-  const appointmentsList = AppointmentsID.map(app => state.appointments[app.toString()]);
-  return appointmentsList;
-};
-
-export function getInterview(state, interview) {
-
-  if (interview) {
-    const interviewer = {...state.interviewers[interview.interviewer.toString()]};
-    //console.log({student: interview.student , interviewer});
-    //console.log(interview);
-    return {student: interview.student , interviewer};
+  
+  
+  
+  export function getInterviewersForDay(state, day) {
+    const dayFound = state.days.find(stateday => day === stateday.name);
+    if(!dayFound || !dayFound.interviewers || dayFound.interviewers.length === 0){
+      return [];
+    }
+    const interviewersFound = dayFound.interviewers.map(interviewer => {
+      return state.interviewers[interviewer];
+    });
+    return interviewersFound;
   }
-  return null;
-}
-
-export function getInterviewersForDay(state,day) {
-  const selectedDay = state.days.find(el => el.name === day);
-  if (!selectedDay) {
-    return [];
+  
+  export function getInterview(state, interview) {
+    if(!interview) {
+      return null;
+    }
+    return {
+      student : interview.student,
+      interviewer : state.interviewers[interview.interviewer]
+    }
   }
-  const interviewersID = selectedDay.interviewers;
-  const interviewersList = interviewersID.map(id => state.interviewers[id.toString()]);
-  return interviewersList;
-}
