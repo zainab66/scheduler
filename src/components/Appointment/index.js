@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 
 import "./styles.scss";
@@ -11,8 +11,7 @@ import Confirm from "./Confirm";
 import Error from "./Error";
 
 //importing custom hook!
-import useVisualMode from "hooks/useVisualMode";
-
+import useVisualMode from "../../hooks/useVisualMode";
   //defining diff modes 
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
@@ -29,6 +28,9 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
+
+ 
+
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -49,7 +51,7 @@ export default function Appointment(props) {
   return (
     <article className="appointment">
       <Header time={props.time} />
-        {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+        {mode === EMPTY && <Empty onAdd={(event) => {transition(CREATE)}} />}
         {mode === SHOW && (
           <Show
             id={props.id}
