@@ -6,14 +6,12 @@ import {
   cleanup,
   waitForElement,
   fireEvent,
-  prettyDOM,
   getByText,
   getAllByTestId,
   getByAltText,
   getByPlaceholderText,
   queryByText,
-  queryByAltText,
-  getByDisplayValue
+
 } from "@testing-library/react";import Application from "components/Application";
 
 afterEach(cleanup);
