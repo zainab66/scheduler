@@ -4,9 +4,9 @@ A web application built with React which allows users to book/ edit/ cancel inte
 
 ## Screen Shots
 
-!["Screenshot of Display Appointments"]()
-!["Screenshot of Edit Appointment Form"]()
-!["Screenshot of Delete Appointment"]()
+!["Screenshot of Display Appointments"](https://github.com/zainab66/scheduler/blob/master/docs/%20Display%20Appointments.jpeg)
+!["Screenshot of Edit Appointment Form"](https://github.com/zainab66/scheduler/blob/master/docs/Edit%20Appointment%20Form.jpeg)
+!["Screenshot of Delete Appointment"](https://github.com/zainab66/scheduler/blob/master/docs/Delete%20Appointment.jpeg)
 
 
 ## Setup
