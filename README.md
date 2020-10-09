@@ -1,4 +1,13 @@
 # Interview Scheduler
+A web application built with React which allows users to book/ edit/ cancel interviews with ease!
+
+
+## Screen Shots
+
+!["Screenshot of Display Appointments"]()
+!["Screenshot of Edit Appointment Form"]()
+!["Screenshot of Delete Appointment"]()
+
 
 ## Setup
 
